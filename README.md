@@ -1,4 +1,4 @@
-BookingMx - Reservations Module - Testing
+## BookingMx - Reservations Module - Testing
 
 📋 Project Description
 This project is part of Sprint 1 of the BookingMx IT team, focused on implementing comprehensive unit testing for the Reservations Module.
