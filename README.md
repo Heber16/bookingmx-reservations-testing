@@ -1,251 +1,138 @@
-## BookingMx - Reservations Module - Testing
+## BookingMx - Complete Module Testing
 
-📋 Project Description
-This project is part of Sprint 1 of the BookingMx IT team, focused on implementing comprehensive unit testing for the Reservations Module.
-The goal is to ensure code quality through rigorous testing, achieving a minimum coverage of 90%.
+📋 General Description
+Comprehensive testing project for BookingMx, including two independent sprints:
 
-🧠 Context
+Sprint 1: Reservation Module Testing in Java with JUnit
 
-After a new feature failed in production due to insufficient testing, the team decided to implement a solid testing strategy that includes:
+Sprint 2: Graph Visualization Module Testing in JavaScript with Jest
 
-A complete unit testing suite using JUnit 5
+🎯 Project Objectives
 
-Code coverage verification with JaCoCo
+Implement exhaustive unit testing for BookingMx’s critical modules, ensuring:
 
-Detailed documentation of issues and solutions
+Minimum 90% coverage in both sprints
 
-Positive and negative test cases
+Tests for positive, negative, and edge cases
 
-🚀 Technologies Used
-Tool	Purpose
-Java 17	Programming language
-Maven	Dependency management and build system
-JUnit 5	Unit testing framework
-Mockito 5.5.0	Mocking library
-JaCoCo 0.8.10	Code coverage tool
-AssertJ 3.24.2	Fluent assertions (optional)
-IntelliJ IDEA	Recommended IDE
+Detailed documentation of issues found and solutions applied
+
+Robust and production-ready code
 
 📁 Project Structure
+
 bookingmx-reservations-testing/
-├── src/
-│   ├── main/java/com/bookingmx/reservations/
-│   │   ├── model/
-│   │   │   └── Reservation.java
-│   │   ├── service/
-│   │   │   └── ReservationService.java
-│   │   ├── repository/
-│   │   │   └── ReservationRepository.java
-│   │   └── exception/
-│   │       ├── ReservationNotFoundException.java
-│   │       ├── InvalidReservationException.java
-│   │       └── ReservationAlreadyExistsException.java
-│   └── test/java/com/bookingmx/reservations/service/
-│       └── ReservationServiceTest.java
-├── docs/
-│   ├── TESTING_LOG.md
-│   └── screenshots/
-│       ├── coverage-report.png
-│       └── tests-passing.png
-├── pom.xml
-└── README.md
+│
+├── sprint1-java-junit/              # Sprint 1: Reservation Module
+│   ├── src/main/java/              # Java source code
+│   ├── src/test/java/              # Tests with JUnit 5
+│   ├── docs/                       # Sprint 1 documentation
+│   ├── pom.xml                     # Maven configuration
+│   └── README.md                   # Sprint 1 guide
+│
+├── sprint2-javascript-jest/         # Sprint 2: Graph Module
+│   ├── src/                        # JavaScript source code
+│   ├── __tests__/                  # Tests with Jest
+│   ├── docs/                       # Sprint 2 documentation
+│   ├── package.json                # npm configuration
+│   └── README.md                   # Sprint 2 guide
+└── README.md                       # This file
 
-🔧 Project Setup
-Prerequisites
+🚀 Sprint 1: Reservation Module (Java + JUnit)
 
-Java JDK 17 or higher
+Technologies
 
-Maven 3.6+
+Java 17
 
-IntelliJ IDEA (recommended) or any Java-compatible IDE
+Maven
 
-Installation
+JUnit 5
 
-Clone the repository:
+Mockito
 
-git clone https://github.com/your-username/bookingmx-reservations-testing.git
-cd bookingmx-reservations-testing
+JaCoCo
 
+Tested Features
 
-Import the project into IntelliJ IDEA:
+✅ Reservation creation
+✅ Reservation editing
+✅ Reservation cancellation
+✅ Business validations
+✅ Exception handling
 
-File → Open
+Coverage Achieved
+92% – Over 50 unit tests
 
-Select the project folder
+Run Tests
 
-IntelliJ will automatically detect it as a Maven project
-
-Download dependencies:
-
-mvn clean install
-
-🧪 Running Tests
-Option 1: From IntelliJ IDEA
-
-Right-click on ReservationServiceTest.java
-
-Select Run 'ReservationServiceTest'
-
-View results in the bottom panel
-
-Option 2: From Maven (Terminal)
-# Run all tests
+cd sprint1-java-junit
 mvn clean test
-
-# Run tests and generate coverage report
 mvn clean test jacoco:report
 
-📊 Viewing the Coverage Report
 
-After running mvn clean test jacoco:report, open:
+🚀 Sprint 2: Graph Visualization Module (JavaScript + Jest)
 
-target/site/jacoco/index.html
+Technologies
 
+Node.js
 
-The report shows:
+JavaScript ES6+
 
-Total coverage percentage
+Jest
 
-Coverage per package and class
+Babel
 
-Covered and uncovered lines
+Tested Features
 
-📈 Coverage Achieved
+✅ City management
+✅ City connections
+✅ Distance calculation (Haversine formula)
+✅ Route search (Dijkstra algorithm)
+✅ Data visualization
 
-✅ Total Coverage: 92%
+Coverage Achieved
+95.8% – Over 190 unit tests
 
-Component	Coverage
-ReservationService	95%
-Reservation (Model)	88%
-Exceptions	100%
-✅ Features Tested
-Positive Cases
+Run Tests
 
-Successful reservation creation
+cd sprint2-javascript-jest
+npm install
+npm test
+npm run test:coverage
 
-Updating existing reservations
 
-Cancelling reservations
+📊 Summary of Results
 
-Confirming reservations
+Sprint	Technology	Tests	Coverage	Status
+Sprint 1	Java / JUnit	50+	92%	✅ Completed
+Sprint 2	JavaScript / Jest	190+	95.8%	✅ Completed
+TOTAL	-	240+	93.9%	✅ Successful
 
-Completing reservations (check-out)
+🐛 Bugs Found and Fixed
 
-Search by ID, name, and email
+Sprint 1 (Java)
 
-Total price calculation
+8 bugs found
 
-Automatic ID generation
+8 bugs fixed (100% resolved)
 
-Negative Cases
+Sprint 2 (JavaScript)
 
-Invalid date validation
+12 bugs found
 
-Required fields validation
+12 bugs fixed (100% resolved)
 
-Invalid email format
+Total: 20 issues identified and resolved through testing
 
-Guest number out of range
+📅 Last Updated: November 2025
+📌 Project Version: 2.0.0
+📈 Status: ✅ Sprints 1 & 2 successfully completed
 
-Negative or zero prices
+🏆 Achievements
 
-Operations on non-existent reservations
-
-Updating cancelled/completed reservations
-
-Cancelling completed reservations
-
-Edge Cases
-
-Reservations with the maximum number of guests (10)
-
-Check-in equal to check-out
-
-Null or empty IDs
-
-Strings with only spaces
-
-Date limits (today, tomorrow)
-
-🧩 Test Suite Overview
-
-The suite includes 50+ unit tests, organized as follows:
-
-Category	Tests
-Creation	8
-Date Validation	6
-Data Validation	7
-Guest Count	5
-Price	4
-Update	5
-Cancellation	4
-Confirmation	2
-Completion	2
-Search	7
-🐛 Issues and Solutions
-
-See docs/TESTING_LOG.md for detailed notes on:
-
-Bugs discovered during testing
-
-Fixes implemented
-
-Lessons learned
-
-Suggested improvements
-
-📸 Screenshots
-
-Screenshots are located in docs/screenshots/:
-
-coverage-report.png – JaCoCo report showing 92% coverage
-
-tests-passing.png – All tests executed successfully
-
-🏗️ Module Architecture
-Data Model
-
-Reservation – Core entity containing:
-
-Guest information (name, email)
-
-Hotel details (name, room type)
-
-Stay dates
-
-Reservation status (PENDING, CONFIRMED, CANCELLED, COMPLETED)
-
-Price information
-
-Service Layer
-
-ReservationService – Business logic handling:
-
-Extensive validations
-
-Reservation lifecycle management
-
-Price calculations
-
-Searches and filters
-
-Repository
-
-ReservationRepository – Data access interface (for future persistence implementation)
-
-Exceptions
-
-ReservationNotFoundException – Reservation not found
-
-InvalidReservationException – Invalid data
-
-ReservationAlreadyExistsException – Duplicate reservation
-
-
-📄 License
-
-This project is part of BookingMx and is intended for internal use only.
-
-Last Updated: November 2024
-Version: 1.0.0
-Sprint: 1
+✅ 240+ unit tests implemented
+✅ 93.9% average coverage
+✅ 20 bugs detected and fixed
+✅ 0 failing tests
+✅ Complete documentation
+✅ Production-ready code
