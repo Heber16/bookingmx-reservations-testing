@@ -1,0 +1,55 @@
+{
+  "name": "bookingmx-graph-visualization",
+  "version": "1.0.0",
+  "description": "BookingMx - Visualization module for graphs of nearby cities - Sprint 2",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:verbose": "jest --verbose",
+    "test:ci": "jest --ci --coverage --maxWorkers=2"
+  },
+  "keywords": [
+    "bookingmx",
+    "graph",
+    "cities",
+    "visualization",
+    "jest",
+    "testing"
+  ],
+  "author": "Teresa González - BookingMx IT Team",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/**/*.test.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.js",
+      "**/?(*.)+(spec|test).js"
+    ]
+  }
+}
